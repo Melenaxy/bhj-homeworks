@@ -19,19 +19,19 @@ function WhackAmole(e) {
             lost.textContent = `${lostCount}`;
         };
     if (deadCount === 10) {
-        alert('Вы выиграли!');
-        deadCount = 0;
-        lostCount = 0;
-        dead.textContent = '0';
-        lost.textContent = '0';
+        endgame('Вы выиграли!')
     };
     if (lostCount === 5) {
-        alert('Вы проиграли!');
+        endgame('Вы проиграли!')
+    };
+
+    function endgame(message) {
+        alert(message);
         deadCount = 0;
         lostCount = 0;
         dead.textContent = '0';
         lost.textContent = '0';
-    };
+    }
 }
 
 

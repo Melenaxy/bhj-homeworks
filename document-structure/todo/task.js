@@ -4,20 +4,15 @@ let addBtn = document.getElementById('tasks__add');
 let removeBtns = document.getElementsByClassName('task__remove');
 let list = document.getElementById('tasks__list');
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        addTask();
-    };
-});
-
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     addTask();
 });
 
 addTask = () => {
-    if (input.value.length === 0) return;
+    if (input.value.trim().length === 0) {
+        return;
+    };
 
     list.innerHTML += `<div class="task">
                 <div class="task__title">
